@@ -22,21 +22,28 @@
     <div class="theGame hidden">
         <label>
             Rock
-            <input type="radio" name="rockPaperScissors" value="rock" checked/>
+            <input type="radio" name="rockPaperScissors" value=1 checked/>
             <!-- <img src="image of the rock" -->
         </label>
         <label>
             Paper
-            <input type="radio" name="rockPaperScissors" value="paper" checked/>
+            <input type="radio" name="rockPaperScissors" value=2/>
             <!-- <img src="Dunder Mifflin logo" -->
         </label>
         <label>
             Scissors
-            <input type="radio" name="rockPaperScissors" value="scissors" checked/>
+            <input type="radio" name="rockPaperScissors" value=3/>
             <!-- <img src="gif of someone mouthing scissors" -->
         </label>
         <button>1... 2... 3... SHOOT</button>
         <span class="simulate">Gif of Rock Paper Scissors</span>
+        <span class="result"></span>
+    </div>
+    <div class="countingStation">
+        <span class="wins"></span>
+        <span class="losses"></span>
+        <span class="draw"></span>
+        <span class="numberOfPlays"></span>
     </div>
     <script type="module" src="app.js"></script>
 </body>
