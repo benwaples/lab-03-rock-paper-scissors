@@ -29,11 +29,20 @@ startGame.addEventListener('click', () => {
 })
 
 shootButton.addEventListener('click', () => {
+    numberOfGames++;
+    
     const checkRadio = document.querySelector('input:checked');
     playersDraw = Number(checkRadio.value);
 
-    console.log(playersDraw, 'players choice');
-    console.log(computerDraw, 'computer choice');
-
-    console.log(checkResult(playersDraw, computerDraw), 'results');
+    const matchResult = checkResult(playersDraw, computerDraw);
+    if (matchResult === 'draw') {
+        countDraw++;
+    }
+    if (matchResult === 'lose') {
+        countLoss++;
+    }
+    if (matchResult === 'win') {
+        countWins++;
+    }
 });
+
