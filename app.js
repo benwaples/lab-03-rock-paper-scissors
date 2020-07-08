@@ -4,6 +4,10 @@ import { getRandomThrow, checkResult } from './gameUtils.js';
 const startGame = document.querySelector('.startGame');
 const theGame = document.querySelector('.theGame');
 const shootButton = document.querySelector('.shootButton');
+const countWinElement = document.querySelector('.wins');
+const countLossElement = document.querySelector('.losses');
+const countDrawElement = document.querySelector('.draw');
+const countGamesElement = document.querySelector('.numberOfPlays');
 
 
 
@@ -46,3 +50,7 @@ shootButton.addEventListener('click', () => {
     }
 });
 
+countWinElement.textContent = countWins;
+countLossElement.textContent = countLoss;
+countDrawElement.textContent = countDraw;
+countGamesElement.textContent = numberOfGames;
