@@ -75,6 +75,8 @@ shootButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
+    resultSpan.classList.add('hidden');
+    resetButton.classList.add('hidden');
     computerDraw = getRandomThrow();
     console.log(computerDraw, 'reset hand draw');
 });
