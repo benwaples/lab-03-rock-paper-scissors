@@ -9,7 +9,7 @@ export function getRandomThrow() {
 }
 
 export function checkResult(player, computer) {
-// evaluate what a win is, loss, and draw, only for the player tho. return win loss or draw
+// evaluate what a win, loss, and draw, only for the player tho. return win loss or draw
     if (player === 1 && computer === 1) {
         return 'draw';
     } else if (player === 2 && computer === 2) {
