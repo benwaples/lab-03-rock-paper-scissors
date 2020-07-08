@@ -122,6 +122,10 @@ footer {
     display: none
 }
 
-button {
+button, label {
     cursor: pointer;
+}
+
+input {
+    display: none
 }
