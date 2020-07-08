@@ -5,7 +5,7 @@
 
 export function getRandomThrow() {
 // get a random number then decypher if it is gonna be rock paper or scissors. return a string of the above
-    Math.ceil(Math.random() * 3);
+    return Math.ceil(Math.random() * 3);
 }
 
 export function checkResult(player, computer) {
