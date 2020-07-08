@@ -11,11 +11,6 @@ const countLossElement = document.querySelector('.losses');
 const countDrawElement = document.querySelector('.draw');
 const countGamesElement = document.querySelector('.numberOfPlays');
 
-
-
-
-
-
 // initialize state
 let computerDraw = 0;
 let playersDraw = 0;
@@ -35,12 +30,13 @@ startGame.addEventListener('click', () => {
 
 shootButton.addEventListener('click', () => {
     numberOfGames++;
-    console.log(numberOfGames)
     
+    // gather players choice and compare to computer
     const checkRadio = document.querySelector('input:checked');
     playersDraw = Number(checkRadio.value);
-
     const matchResult = checkResult(playersDraw, computerDraw);
+
+    //determine who won
     if (matchResult === 'draw') {
         resultSpan.textContent = 'We tied, lets go again';
         countDraw++;
@@ -53,10 +49,19 @@ shootButton.addEventListener('click', () => {
         resultSpan.textContent = 'You Won?! Alright let\'s go agiain'
         countWins++;
     }
+
+    //update counters
     countWinElement.textContent = `You have won ${countWins} games`;
     countLossElement.textContent = `You have lost ${countLoss} games`;
     countDrawElement.textContent = `You have tied ${countDraw} games`;
     countGamesElement.textContent = `You have played ${numberOfGames} games`;
 
+    //reset button appears
+    resetButton.classList.remove('hidden');
 });
+
+resetButton.addEventListener('click', () => {
+    computerDraw = getRandomThrow();
+    console.log(computerDraw, 'reset hand draw')
+})
 
