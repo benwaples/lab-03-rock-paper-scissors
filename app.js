@@ -11,6 +11,7 @@ const countWinElement = document.querySelector('.wins');
 const countLossElement = document.querySelector('.losses');
 const countDrawElement = document.querySelector('.draw');
 const countGamesElement = document.querySelector('.numberOfPlays');
+const countReset = document.querySelector('.countReset');
 
 // initialize state
 let computerDraw = 0;
@@ -19,6 +20,7 @@ let countWins = 0;
 let countLoss = 0;
 let countDraw = 0;
 let numberOfGames = 0;
+let resetCounter = 0;
 
 
 // set event listeners to update state and DOM 
@@ -27,7 +29,6 @@ startGame.addEventListener('click', () => {
     startGame.classList.add('hidden');
     theGame.classList.remove('hidden');
     computerDraw = getRandomThrow();
-    console.log(computerDraw);
     
 });
 
@@ -67,9 +68,6 @@ shootButton.addEventListener('click', () => {
 
     }, 1500);
     
-    
-    
-    
     //reset button appears and take away the shoot button
     resetButton.classList.remove('hidden');
     shootButton.classList.add('hidden');
@@ -78,10 +76,11 @@ shootButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
+    resetCounter ++;
     resultSpan.classList.add('hidden');
     resetButton.classList.add('hidden');
     computerDraw = getRandomThrow();
     shootButton.classList.remove('hidden');
-    console.log(computerDraw)
+    countReset.textContent = `You have reset the game ${resetCounter}`;
 });
 
