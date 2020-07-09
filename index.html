@@ -24,6 +24,8 @@
     <div>
     <button class="startGame">START</button>
     <div class="theGame hidden">
+
+        <div id='radiodiv'>
         <label>
             <input type="radio" name="rockPaperScissors" value=1 checked/>
             <img width="200px" src="https://i1.wp.com/realalphamag.com/wp-content/uploads/2019/10/dwayne-the-rock-johnson.jpg?fit=810%2C610&ssl=1">
@@ -36,17 +38,19 @@
             <input type="radio" name="rockPaperScissors" value=3 />
             <img width="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/220px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg">
         </label>
+        </div>
+
         <button class="shootButton">1... 2... 3... SHOOT</button>
         <span class="simulate hidden"><img width="200px" src="https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/giphy.gif"></span>
         <span class="result"></span>
         <button class="resetButton hidden">RESET</button>
     </div>
-    <div class="countingStation">
-        <span class="wins"></span>
-        <span class="losses"></span>
-        <span class="draw"></span>
-        <span class="numberOfPlays"></span>
-        <span class="countReset"></span>
+    <div class="countingStation hidden">
+        <span class="wins">Wins</span>
+        <span class="losses">Losses</span>
+        <span class="draw">Draws</span>
+        <span class="numberOfPlays">Total Plays</span>
+        <span class="countReset">Reset Count</span>
     </div>
     <script type="module" src="app.js"></script>
 </body>
