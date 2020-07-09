@@ -43,7 +43,7 @@ shootButton.addEventListener('click', () => {
     simulate.classList.remove('hidden');
     setTimeout(function() {
         simulate.classList.add('hidden');
-    }, 1000);
+    }, 1500);
     
     //determine who won
     setTimeout(function() {
@@ -65,7 +65,7 @@ shootButton.addEventListener('click', () => {
         countDrawElement.textContent = `You have tied ${countDraw} games`;
         countGamesElement.textContent = `You have played ${numberOfGames} games`;
 
-    }, 1000);
+    }, 1500);
     
     
     
