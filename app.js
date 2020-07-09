@@ -1,5 +1,11 @@
 // import functions and grab DOM elements
-import { getRandomThrow, checkResult } from './gameUtils.js';
+import { 
+    getRandomThrow, 
+    checkResult, 
+    computerHand,
+    toggleElement 
+} from './gameUtils.js';
+
 
 const startGame = document.querySelector('.startGame');
 const theGame = document.querySelector('.theGame');
@@ -12,6 +18,9 @@ const countLossElement = document.querySelector('.losses');
 const countDrawElement = document.querySelector('.draw');
 const countGamesElement = document.querySelector('.numberOfPlays');
 const countReset = document.querySelector('.countReset');
+const radioDiv = document.querySelector('#radiodiv');
+const countStation = document.querySelector('.countingStation');
+
 
 // initialize state
 let computerDraw = 0;
@@ -26,15 +35,14 @@ let resetCounter = 0;
 // set event listeners to update state and DOM 
 
 startGame.addEventListener('click', () => {
-    startGame.classList.add('hidden');
-    theGame.classList.remove('hidden');
     computerDraw = getRandomThrow();
-    
+    toggleElement([startGame, theGame]);
 });
 
 shootButton.addEventListener('click', () => {
     numberOfGames++;
-    
+    const computerString = computerHand(computerDraw);
+
     // gather players choice and compare to computer
     const checkRadio = document.querySelector('input:checked');
     playersDraw = Number(checkRadio.value);
@@ -50,15 +58,15 @@ shootButton.addEventListener('click', () => {
     setTimeout(function() {
         resultSpan.classList.remove('hidden');
         if (matchResult === 'draw') {
-            resultSpan.textContent = 'We tied, lets go again';
+            resultSpan.textContent = `The computer played ${computerString}. We tied, lets go again`;
             countDraw++;
         }
         if (matchResult === 'lose') {
-            resultSpan.textContent = 'You lost, don\'t worry though we can play again';
+            resultSpan.textContent = `The computer played ${computerString}. You lost, don't worry though we can play again`;
             countLoss++;
         }
         if (matchResult === 'win') {
-            resultSpan.textContent = 'You Won?! Alright let\'s go again';
+            resultSpan.textContent = `The computer played ${computerString}. You Won?! Alright let's go again`;
             countWins++;
         }
         countWinElement.textContent = `You have won ${countWins} games`;
@@ -69,18 +77,15 @@ shootButton.addEventListener('click', () => {
     }, 1500);
     
     //reset button appears and take away the shoot button
-    resetButton.classList.remove('hidden');
-    shootButton.classList.add('hidden');
+
+    toggleElement([resetButton, countStation, shootButton, radioDiv]);
     
     //update counters
 });
 
 resetButton.addEventListener('click', () => {
     resetCounter ++;
-    resultSpan.classList.add('hidden');
-    resetButton.classList.add('hidden');
+    toggleElement([resultSpan, resetButton, radioDiv, shootButton, countStation]);
     computerDraw = getRandomThrow();
-    shootButton.classList.remove('hidden');
-    countReset.textContent = `You have reset the game ${resetCounter}`;
+    countReset.textContent = `You have reset the game ${resetCounter} times`;
 });
-
