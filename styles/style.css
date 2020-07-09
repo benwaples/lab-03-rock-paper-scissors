@@ -7,11 +7,11 @@ body {
     --color4: hsla(187, 41%, 94%, 1);
     --color5: hsla(170, 28%, 95%, 1); */
 
-    --color1: hsla(0, 0%, 0%, 1);
-    --color2: hsla(221, 67%, 24%, 1);
-    --color3: hsla(37, 93%, 99%, 1);
-    --color4: hsla(0, 0%, 90%, 1);
-    --color5: hsla(0, 0%, 100%, 1);
+    --color1: hsla(197, 54%, 33%, 1);
+    --color2: hsla(173, 73%, 62%, 1);
+    --color3: hsla(43, 55%, 91%, 1);
+    --color4: hsla(27, 60%, 96%, 1);
+    --color5: hsla(12, 65%, 91%, 1);
 
     /* --color1: hsla(45, 86%, 83%, 1);
     --color2: hsla(135, 65%, 98%, 1);
@@ -25,7 +25,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color5);
+    background-color: var(--color3);
 }
 
 main {

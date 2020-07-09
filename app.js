@@ -20,6 +20,7 @@ let countLoss = 0;
 let countDraw = 0;
 let numberOfGames = 0;
 
+
 // set event listeners to update state and DOM 
 
 startGame.addEventListener('click', () => {
@@ -27,6 +28,7 @@ startGame.addEventListener('click', () => {
     theGame.classList.remove('hidden');
     computerDraw = getRandomThrow();
     console.log(computerDraw);
+    
 });
 
 shootButton.addEventListener('click', () => {
@@ -42,7 +44,7 @@ shootButton.addEventListener('click', () => {
     setTimeout(function() {
         simulate.classList.add('hidden');
     }, 1000);
-
+    
     //determine who won
     setTimeout(function() {
         resultSpan.classList.remove('hidden');
@@ -51,26 +53,28 @@ shootButton.addEventListener('click', () => {
             countDraw++;
         }
         if (matchResult === 'lose') {
-            resultSpan.textContent = 'You lost, don\' worry though we can play again';
+            resultSpan.textContent = 'You lost, don\'t worry though we can play again';
             countLoss++;
         }
         if (matchResult === 'win') {
             resultSpan.textContent = 'You Won?! Alright let\'s go again';
             countWins++;
         }
+        countWinElement.textContent = `You have won ${countWins} games`;
+        countLossElement.textContent = `You have lost ${countLoss} games`;
+        countDrawElement.textContent = `You have tied ${countDraw} games`;
+        countGamesElement.textContent = `You have played ${numberOfGames} games`;
+
     }, 1000);
-
-
-    //update counters
-    countWinElement.textContent = `You have won ${countWins} games`;
-    countLossElement.textContent = `You have lost ${countLoss} games`;
-    countDrawElement.textContent = `You have tied ${countDraw} games`;
-    countGamesElement.textContent = `You have played ${numberOfGames} games`;
-
-
+    
+    
+    
+    
     //reset button appears and take away the shoot button
     resetButton.classList.remove('hidden');
     shootButton.classList.add('hidden');
+    
+    //update counters
 });
 
 resetButton.addEventListener('click', () => {
