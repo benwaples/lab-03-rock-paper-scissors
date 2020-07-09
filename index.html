@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles/reset.css"> -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Welcome to Rock Paper Scissors</h1>
+        <div class="instructions">
+            <h2>instructions</h2>
+            <p>you know this game! Click the button below to start, then choose rock, paper, or scissors.</p>
+        </div>
+    </div>  
+    <div>
+    <button class="startGame">START</button>
+    <div class="theGame hidden">
+        <label>
+            <input type="radio" name="rockPaperScissors" value=1 checked/>
+            <img width="200px" src="https://i1.wp.com/realalphamag.com/wp-content/uploads/2019/10/dwayne-the-rock-johnson.jpg?fit=810%2C610&ssl=1">
+        </label>
+        <label>
+            <input type="radio" name="rockPaperScissors" value=2 />
+            <img width="200px" src="https://i.etsystatic.com/16438614/r/il/c31bd2/1806659071/il_794xN.1806659071_pn8j.jpg">
+        </label>
+        <label>
+            <input type="radio" name="rockPaperScissors" value=3 />
+            <img width="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/220px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg">
+        </label>
+        <button class="shootButton">1... 2... 3... SHOOT</button>
+        <span class="simulate hidden"><img width="200px" src="https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/giphy.gif"></span>
+        <span class="result"></span>
+        <button class="resetButton hidden">RESET</button>
+    </div>
+    <div class="countingStation">
+        <span class="wins"></span>
+        <span class="losses"></span>
+        <span class="draw"></span>
+        <span class="numberOfPlays"></span>
+        <span class="countReset"></span>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
