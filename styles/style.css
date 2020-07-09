@@ -1,11 +1,17 @@
 
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    --color1: hsla(349, 69%, 76%, 1);
+    /* --color1: hsla(349, 69%, 76%, 1);
     --color2: hsla(207, 67%, 44%, 1);
     --color3: hsla(200, 61%, 56%, 1);
     --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1);
+    --color5: hsla(170, 28%, 95%, 1); */
+
+    --color1: hsla(0, 0%, 0%, 1);
+    --color2: hsla(221, 67%, 24%, 1);
+    --color3: hsla(37, 93%, 99%, 1);
+    --color4: hsla(0, 0%, 90%, 1);
+    --color5: hsla(0, 0%, 100%, 1);
 
     /* --color1: hsla(45, 86%, 83%, 1);
     --color2: hsla(135, 65%, 98%, 1);
@@ -19,7 +25,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-color: var(--color5);
 }
 
 main {
@@ -128,4 +134,20 @@ button, label {
 
 input {
     display: none
+}
+
+input:checked +img {
+    border: 3px solid tomato;
+}
+
+.countingStation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.draw, .wins, .losses, .numberOfPlays {
+    margin: 20px;
+    border: 2px solid black;
+    display: inline;
 }

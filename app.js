@@ -12,10 +12,6 @@ const countLossElement = document.querySelector('.losses');
 const countDrawElement = document.querySelector('.draw');
 const countGamesElement = document.querySelector('.numberOfPlays');
 
-function hideGIF(arg) {
-    arg.classList.add('hidden')
-}
-
 // initialize state
 let computerDraw = 0;
 let playersDraw = 0;
@@ -49,6 +45,7 @@ shootButton.addEventListener('click', () => {
 
     //determine who won
     setTimeout(function() {
+        resultSpan.classList.remove('hidden');
         if (matchResult === 'draw') {
             resultSpan.textContent = 'We tied, lets go again';
             countDraw++;
@@ -58,10 +55,11 @@ shootButton.addEventListener('click', () => {
             countLoss++;
         }
         if (matchResult === 'win') {
-            resultSpan.textContent = 'You Won?! Alright let\'s go agiain';
+            resultSpan.textContent = 'You Won?! Alright let\'s go again';
             countWins++;
         }
     }, 1000);
+
 
     //update counters
     countWinElement.textContent = `You have won ${countWins} games`;
@@ -70,14 +68,16 @@ shootButton.addEventListener('click', () => {
     countGamesElement.textContent = `You have played ${numberOfGames} games`;
 
 
-    //reset button appears
+    //reset button appears and take away the shoot button
     resetButton.classList.remove('hidden');
+    shootButton.classList.add('hidden');
 });
 
 resetButton.addEventListener('click', () => {
     resultSpan.classList.add('hidden');
     resetButton.classList.add('hidden');
     computerDraw = getRandomThrow();
-    console.log(computerDraw, 'reset hand draw');
+    shootButton.classList.remove('hidden');
+    console.log(computerDraw)
 });
 
