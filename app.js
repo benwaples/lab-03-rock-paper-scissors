@@ -12,6 +12,7 @@ const countLossElement = document.querySelector('.losses');
 const countDrawElement = document.querySelector('.draw');
 const countGamesElement = document.querySelector('.numberOfPlays');
 const countReset = document.querySelector('.countReset');
+const rpsButtons = document.querySelector('.buttons');
 
 // initialize state
 let computerDraw = 0;
@@ -24,7 +25,6 @@ let resetCounter = 0;
 
 
 // set event listeners to update state and DOM 
-
 startGame.addEventListener('click', () => {
     startGame.classList.add('hidden');
     theGame.classList.remove('hidden');
@@ -32,9 +32,10 @@ startGame.addEventListener('click', () => {
     
 });
 
+//game play button
 shootButton.addEventListener('click', () => {
     numberOfGames++;
-    
+    rpsButtons.classList.add('hidden');
     // gather players choice and compare to computer
     const checkRadio = document.querySelector('input:checked');
     playersDraw = Number(checkRadio.value);
@@ -61,6 +62,7 @@ shootButton.addEventListener('click', () => {
             resultSpan.textContent = 'You Won?! Alright let\'s go again';
             countWins++;
         }
+        //update counters
         countWinElement.textContent = `You have won ${countWins} games`;
         countLossElement.textContent = `You have lost ${countLoss} games`;
         countDrawElement.textContent = `You have tied ${countDraw} games`;
@@ -72,10 +74,11 @@ shootButton.addEventListener('click', () => {
     resetButton.classList.remove('hidden');
     shootButton.classList.add('hidden');
     
-    //update counters
 });
 
+//reset the game to be logical for the user, keep needed elements present though
 resetButton.addEventListener('click', () => {
+    rpsButtons.classList.remove('hidden');
     resetCounter ++;
     resultSpan.classList.add('hidden');
     resetButton.classList.add('hidden');
